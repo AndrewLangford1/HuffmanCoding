@@ -24,11 +24,9 @@ public class DecodeWriter {
 				//readers
 				FileInputStream fileInput = new FileInputStream(inputFile);
 				BufferedInputStream buffIn = new BufferedInputStream(fileInput);
-				
-				
-				//writers
-				FileOutputStream fileOutput = new FileOutputStream(outputFile);
-				DataOutputStream dataOut = new DataOutputStream(fileOutput);
+					
+				FileWriter fw = new FileWriter(outputFile);
+				BufferedWriter dataOut = new BufferedWriter(fw);
 				
 				
 				
@@ -48,7 +46,8 @@ public class DecodeWriter {
 					ArrayList<Integer> toWrite = tree.decode(asBinary);
 					
 					for(Integer x : toWrite){
-						dataOut.writeChar(x);
+			
+						dataOut.write(x);
 					}
 					
 					currentByte = buffIn.read();

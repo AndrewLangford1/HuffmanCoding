@@ -100,7 +100,6 @@ public class HuffmanTree {
 			
 			node.setCode(asBinary);
 			
-			System.out.println(node.getCharacter() + "  => " + asBinary);
 			codeMap.put(node.getCharacter(), asBinary);
 			
 			code ++;	
