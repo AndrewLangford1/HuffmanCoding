@@ -1,7 +1,6 @@
 package huffman;
 
 import java.util.HashMap;
-import java.util.Map.Entry;
 
 /**
  * Main class to handle file decodings

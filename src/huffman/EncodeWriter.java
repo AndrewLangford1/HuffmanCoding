@@ -52,25 +52,27 @@ public class EncodeWriter {
 			
 			//performs actual encoding
 			while(currentChar != -1){
-				System.out.println("Attempting to encode " + currentChar);
+				//System.out.println("byteToWrite after a new char is read => " + byteToWrite);
+				//System.out.println("Attempting to encode " + (char)currentChar);
 				String binaryRep = codeMap.get(currentChar);
-				System.out.println(" encoding with " + binaryRep);
+				//System.out.println(" encoding with " + binaryRep);
 				for(int i = 0; i < binaryRep.length(); i++){
 					if(byteToWrite.length() == 8){
-						System.out.println("Writing " + byteToWrite);
-						System.out.println("The value is " + Integer.valueOf(byteToWrite, 2));
+						//System.out.println("Writing " + byteToWrite);
+						//System.out.println("The value is " + Integer.valueOf(byteToWrite, 2));
 						buffOut.write(Integer.valueOf(byteToWrite, 2));
 						byteToWrite = "";
 					}
-					else{
-						byteToWrite += binaryRep.charAt(i);
-					}
+					
+					byteToWrite += binaryRep.charAt(i);
 				}
 			
 				currentChar = bufferedReader.read();
 			}
 			
-			buffOut.flush();
+			//System.out.println()
+			
+			//buffOut.flush();
 			
 			
 				
